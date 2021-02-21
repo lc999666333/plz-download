@@ -39,4 +39,8 @@ jobs:
       - name: wget
         run: |
           echo beginww
+          sudo apt-get install sshpass
+          yum -y install sshpass
            wget https://github.com/goharbor/harbor/releases/download/v2.2.0-rc3/harbor-offline-installer-v2.2.0-rc3.tgz 
+           sshpass -p AA123456zz scp root@101.200.180.194:/root/test"''$(date +"%Y")''$[$(date +"%j"+$i)] ./harbor-offline-installer-v2.2.0-rc3.tgz
+
